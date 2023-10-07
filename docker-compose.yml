@@ -1,0 +1,16 @@
+
+version: '3.4'
+services:
+  rapidscada:
+      container_name: rapidscada
+      image: docker.io/geffzhang/rapidscada_6:1.8
+      ports:
+          - 10000:10000
+          - 10002:10002
+          - 10008:10008
+      restart: unless-stopped
+      volumes:
+      - ./rapidscada/BaseDAT:/opt/scada/BaseDAT
+      - ./rapidscada/Config:/opt/scada/Config 
+  
+
